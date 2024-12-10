@@ -1,0 +1,10 @@
+- name: Install the apache/httpd # Name of the playbook
+  hosts: web # target host details
+  become: yes # Adminstrative access
+  
+  
+  tasks:
+    - name: Install the apache/httpd 
+      dnf:
+        name: httpd
+        state: absent
