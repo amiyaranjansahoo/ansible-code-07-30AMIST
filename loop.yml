@@ -1,0 +1,14 @@
+- name: Install the apache, git, docker
+  hosts: web 
+  become: yes 
+  
+  
+  tasks:
+    - name: Install the apache, git, docker using the loop
+      dnf:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - httpd
+        - git
+        - docker

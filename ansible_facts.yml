@@ -1,0 +1,8 @@
+- name: Understanding the gather facts
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: gather fact information
+      debug:
+        var: ansible_facts
