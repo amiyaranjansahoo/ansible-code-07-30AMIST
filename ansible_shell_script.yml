@@ -1,8 +1,0 @@
-- name: shell script demo
-  hosts: web 
-  become: yes 
-  
-  
-  tasks:
-    - name: shell script 
-      script: /home/ec2-user/learning/myscript.sh
