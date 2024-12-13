@@ -1,7 +1,0 @@
-- name: Reboot module
-  hosts: web
-  become: yes
-  
-  tasks:
-    - name: reboot
-      reboot:

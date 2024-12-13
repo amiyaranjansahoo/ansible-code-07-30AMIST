@@ -1,0 +1,24 @@
+- name: Install, start the nginx
+  hosts: nginx 
+  become: yes
+  
+  
+  tasks:
+    - name: Install the nginx
+      dnf:
+        name: nginx
+        state: present 
+    - name: Start the nginx 
+      service:
+        name: nginx
+        state: started 
+    - name: Copy the nginx configuration file 
+      copy:
+        src: /home/ec2-user/learning/miniproject/lb.conf
+        dest: /etc/nginx/conf.d/
+      notify: Restart the nginx
+  handlers:
+    - name: Restart the nginx  
+      service:
+        name: nginx
+        state: restarted
